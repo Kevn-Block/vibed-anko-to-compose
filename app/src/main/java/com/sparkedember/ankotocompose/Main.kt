@@ -19,15 +19,40 @@ import org.jetbrains.kotlin.psi.*
  */
 fun main() {
     val ankoCode = """
-        verticalLayout {
-            textView("Hello, Anko!")
-            
-            button("Click Here") {
-                onClick {
-                    println("Button was clicked!")
+        linearLayout {
+            titleLayout = verticalLayout {
+                titleTextView = textView {
+                    layoutId = View.generateViewId()
+                    text = this@StyledToolbar.title
+                    textSize = mediumSize
+                    textColor = Color.BLACK
+                    typeface = black
+                    lines = 1
+                    ellipsize = END
                 }
+                subtitleTextView = textView {
+                    textSize = xsmallSize
+                    typeface = regular
+                    textColor = darkGrayColor
+                    visibility = gone
+                    lines = 1
+                    ellipsize = END
+                }.lparams {
+                    topMargin = -dip(4)
+                }
+            }.lparams {
+                width = 0
+                weight = 1f
+                marginEnd = dip(8)
+                gravity = centerVertical
             }
-        }
+            rightActionFrame = frameLayout().lparams {
+                marginEnd = dip(16)
+                width = wrapContent
+                height = wrapContent
+                gravity = centerVertical
+            }
+        }.lparams(width = matchParent)
     """.trimIndent()
     
     println("Original Anko code:")
