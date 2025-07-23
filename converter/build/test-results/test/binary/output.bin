@@ -1,0 +1,17 @@
+Result code: Column {
+    Column {
+    Text("Title")
+    Text("Subtitle")
+}
+
+    Box {
+    // Empty layout
+}
+}
+Strategy: AST_PARSING
+Result code: Column {
+    Text("Title")
+    Text("Subtitle")
+}
+Strategy: AST_PARSING
+Warnings: []

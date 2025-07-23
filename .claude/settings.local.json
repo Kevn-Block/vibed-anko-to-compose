@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./gradlew:*)",
+      "Bash(kotlin:*)",
+      "Bash(find:*)",
+      "Bash(tree:*)"
+    ],
+    "deny": []
+  }
+}
